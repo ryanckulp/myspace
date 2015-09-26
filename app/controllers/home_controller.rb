@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     @u = current_user
     @age = bday
     @sign = zodiac
+    @meet = people
   end
 
   def auth
@@ -31,6 +32,15 @@ class HomeController < ApplicationController
     b = @u.birthday.split('/')
     bday = [b[2].to_i, b[0].to_i, b[1].to_i].join(",").gsub(',','-')
     bday.to_datetime.zodiac_sign
+  end
+
+  def people
+    likes = @u.likes
+    one = likes[0]["name"].to_s
+    two = likes[1]["name"].to_s
+    three = likes[2]["name"].to_s
+    people = one
+    return people
   end
 
 end

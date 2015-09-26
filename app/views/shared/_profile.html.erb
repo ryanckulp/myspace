@@ -7,18 +7,22 @@
 <h2><%= @u.first_name %></h2>
   <div class="row">
       <div class="col-md-6" style="text-align: center">
-      <img src="assets/dwight.png" class="img img-responsive">
+      <a href="<%= @u.fb_url %>" target="_blank">
+        <%= image_tag @u.avatar, class: "img img-responsive", style: "width: 250px" %>
+      </a>
       <strong><%= link_to "View More Pics", @u.fb_url %></strong>
       </div>
 
   <!-- location  -->
     <div class="col-md-6">
-    <h4>I AM THE REAL DWIGHT SCHRUTE - THAT IS ALL!</h4>
-    Male <br>
+    <%= @u.name %>
+    <!-- insert gender -->
+    <!-- Male  -->
+    <br>
    <%= @age %> years old<br>
-    Scranton, Pennsylvania<br>
+    <%= @u.location %><br>
     United States <br><br>
-    <img src="assets/online.png" class="img img-responsive"><br><br>
+    <%= image_tag "online.png", class: "img img-responsive" %><br><br>
     Last login: <br>
     <%= Date.today.strftime("%m/%d/%Y")%>
     </div>
@@ -30,32 +34,23 @@
         <div class="col-md-6">
           <ul>
           <strong>
-             <li><img src="assets/send.png"><%= link_to "Send Message", "mailto:#{@u.email}", target: "_blank" %></li>
-          </ul>
-          <ul>
-            <li><img src="assets/add.png"><%= link_to "Add to Friends", @u.fb_url, target: "_blank" %></li>
-          </ul>
-          <ul>
-            <li><img src="assets/im.png"><a href="">IM / Call</a></li>
-          </ul>
-          <ul>
-            <li><img src="assets/group.png"><a href="">Add to Group</a></li>           
-          </strong>
 
+             <li><%= image_tag "send.png" %><%= link_to "Send Message", "mailto:#{@u.email}?subject=Found You on Myspace", target: "_blank" %></li>
+            <li><%= image_tag "add.png" %><%= link_to "Add to Friends", @u.fb_url, target: "_blank" %></li>
+            <li><%= image_tag "img.png" %><a href="">IM / Call</a></li>
+            <li><%= image_tag "group.png" %><a href="">Add to Group</a></li>           
+          </strong>
         </ul>
         </div>
         <div class="col-md-6">
           <ul>
-            <li><img src="assets/forward.png"><a href=""><strong>Forward to a Friend</strong></a></li>
-          </ul>
-          <ul>
-            <li><img src="assets/favorites.png"><a href=""><strong>Add to Favorites</strong></a></li>
-          </ul>
-          <ul>
-            <li><img src="assets/block.png"><a href=""><strong>Block User</strong></a></li>
-          </ul>
-          <ul>
-            <li><img src="assets/rank.png"><a href=""><strong>Rank User</strong></a></li>
+          <strong>
+           <li><%= image_tag "forward.png" %><a href="">Forward to a Friend</a></li>
+            <li><%= image_tag "favorites.png" %><a href="">Add to Favorites</a></li>
+            <li><%= image_tag "block.png" %><a href="">Block User</a></li>
+            <li><%= image_tag "rank.png" %><a href="">Rank User</a></li>           
+          </strong>
+
         </ul>
         </div>
       </div>
@@ -66,7 +61,7 @@
       <div class="panel-body">
         <div class="col-md-4 categories">
           <strong>
-          <p>General</p>
+          <p>Religion</p>
           <p>Music</p>
           <p>Movies</p>
           <p>Television</p>
@@ -74,11 +69,11 @@
           </strong>
         </div>
         <div class="col-md-8 answers">
-          <p>stuff</p>
+          <p>Christian - Other</p>
           <p><%= @u.music %></p>
-          <p>shawshank redemption</p>
-          <p>girls</p>
-          <p>catcher in the rye</p>
+          <p><%= @u.movies %></p>
+          <p><%= @u.television %></p>
+          <p><%= @u.books %></p>
         </div>
       </div>
   </div>
@@ -89,13 +84,11 @@
       <div class="panel-body">
         <div class="col-md-4 categories">
           <strong>
-          <p>Status:</p>
           <p>Zodiac Sign:</p>      
           </strong>
         </div>
         <div class="col-md-8 answers">
-          <p>stuff</p>
-          <p><a href=""><strong style="color: blue"><%= @sign %></strong></a></p>
+          <p><a href="http://ryanckulp.com/projects" target="_blank"><strong style="color: blue"><%= @sign %></strong></a></p>
         </div>
       </div>
   </div>
@@ -114,9 +107,9 @@
 
 <!-- blog -->
 <div class="row tight">
-  <p><strong><%= @u.first_name %>'s Latest blog Entry</strong> [<a href="#">Subscribe to this Blog</a>]</p><br>
-  <p>SCHRUTESPACE.com (<a href="">view more</a>)</p><br>
-  <p>[<a href="">View All Blog Entries</a>]</p>
+  <p><strong><%= @u.first_name %>'s Latest blog Entry</strong> [<a href="<%= @u.fb_url %>">Subscribe to this Blog</a>]</p><br>
+  <p><%= "#{@u.first_name.downcase}#{@u.last_name.downcase}.com" %> (<a href="<%= @u.fb_url %>">view more</a>)</p><br>
+  <p>[<a href="<%= @u.fb_url %>">View All Blog Entries</a>]</p>
 </div>
 
 <!-- about  -->
@@ -129,7 +122,7 @@
         <strong>About me:</strong>
         <p><%= @u.bio %></p>
         <strong>Who I'd like to meet:</strong>
-        <p>girls cool people guns and anime' fans steven seagal</p>
+        <p><%= @u.likes.tr('[""]', '') %></p>
         </div>
     </div>
 </div>
@@ -147,37 +140,56 @@
 
     <div class="friends">
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+        <a href="https://myspace.com/tom">
+          <p>Tom</p>
+          <%= image_tag "tom.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
       </div>
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+        <a href="https://myspace.com/nickelback">
+          <p>Nickelback</p>
+          <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
       </div>
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+        <a href="https://myspace.com/kimsaprincess">
+          <p>Kim Kardashian</p>
+          <%= image_tag "kim.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
       </div>
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+        <a href="https://myspace.com/creed">
+          <p>Creed</p>
+          <%= image_tag "creed.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
+      </div>
+      <div class="row"></div>
+      <div class="col-md-3">
+        <a href="https://myspace.com/prisonbreak">
+          <p>Prison Break</p>
+          <%= image_tag "prisonbreak.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
       </div>
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+        <a href="https://myspace.com/nickelback">
+          <p>Nickelback</p>
+          <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
       </div>
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+        <a href="https://myspace.com/nickelback">
+          <p>Nickelback</p>
+          <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
       </div>
       <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
-      </div>
-      <div class="col-md-3">
-        <p>Tom</p>
-        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
-      </div>
+        <a href="https://myspace.com/nickelback">
+          <p>Nickelback</p>
+          <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
+      </div>          
+
+
     </div>
 </div><!-- End friend row -->
 

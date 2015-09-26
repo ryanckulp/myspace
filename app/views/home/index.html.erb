@@ -1,4 +1,9 @@
 <%
 meta description: "How many friends do you really have?"
 %>
-<%=  render 'shared/profile' %>
+
+<% if current_user %>
+  <%=  render 'shared/profile' %>
+<% else %>
+  put something here 
+<% end %>
