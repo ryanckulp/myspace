@@ -8,7 +8,7 @@
   <div class="row">
       <div class="col-md-6" style="text-align: center">
       <img src="assets/dwight.png" class="img img-responsive">
-      <a href=""><strong>View More Pics</strong></a>
+      <strong><%= link_to "View More Pics", @u.fb_url %></strong>
       </div>
 
   <!-- location  -->
@@ -75,7 +75,7 @@
         </div>
         <div class="col-md-8 answers">
           <p>stuff</p>
-          <p>nickelback</p>
+          <p><%= @u.music %></p>
           <p>shawshank redemption</p>
           <p>girls</p>
           <p>catcher in the rye</p>
@@ -95,7 +95,7 @@
         </div>
         <div class="col-md-8 answers">
           <p>stuff</p>
-          <p><a href=""><strong style="color: blue">Aquarius</strong></a></p>
+          <p><a href=""><strong style="color: blue"><%= @sign %></strong></a></p>
         </div>
       </div>
   </div>
@@ -179,10 +179,6 @@
         <img src="assets/tom.jpg" class="img img-responsive" width="150px">
       </div>
     </div>
+</div><!-- End friend row -->
 
-
-
-</div>
-
-</div> 
-<a href="#" class="btn btn-primary">btn</a>
+</div><!-- End right column -->

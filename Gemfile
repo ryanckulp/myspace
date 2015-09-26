@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'font-awesome-rails'
 gem 'highcharts-rails', "~> 3.0.0"
 gem 'metamagic'
+gem 'zodiac'
 
 group :development, :test do
   gem 'byebug'

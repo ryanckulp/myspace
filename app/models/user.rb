@@ -5,6 +5,7 @@ def self.sign_in_from_omniauth(auth)
 end
 
 def self.create_user_from_omniauth(auth)
+    binding.pry
   create(
     provider: auth['provider'],
     uid: auth['uid'],
@@ -15,7 +16,8 @@ def self.create_user_from_omniauth(auth)
     bio: auth["extra"]["raw_info"]["bio"],
     birthday: auth["extra"]["raw_info"]["birthday"],
     email: auth['extra']['raw_info']['email'],
-    fb_friends: auth['extra']['raw_info']['friends']['summary']['total_count']
+    fb_friends: auth['extra']['raw_info']['friends']['summary']['total_count'],
+    music: auth["extra"]["raw_info"]["music"]["data"].first["name"]
     )
 end
 
