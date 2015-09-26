@@ -1,0 +1,65 @@
+<div class="jumbotron">
+  <button id="question">
+    <div class="animated bounce"><h1 class="signup">you have <strong>no friends</strong>.</h1></div>
+  </button><br><br>
+
+  <div id="proof">
+   <div class="row">
+    <p>Don't believe it?</p> 
+    <p>Tell us how many friends you have.</p>
+      <div class="col-xs-5"></div>
+      <div class="form-group col-xs-2">
+        <input autofocus class="form-control input-lg" id="friends" type="text" placeholder="0" required="true">
+      </div>
+      <div class="col-xs-5"></div><br><br><br>
+    </div>
+      <div class="row">
+        <a id="signin" href="auth/facebook">
+          <%= image_tag "fb-login.jpg", style: "max-height: 35px" %>
+       </a>
+      </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+// Show then hide the headline (needs headline below closing 'proof' div)
+// $(document).ready(function() {
+//   $('#proof').hide().delay(1700).show('slow');
+//   $('#question').show().delay(1700).hide('slow');
+//       $('form:first *:input[type!=hidden]:first').focus();
+//   });
+
+$('#proof').hide();
+
+// Show question when user clicks bouncing headline
+$(document).ready(function() {
+    $('button').click(function(){
+      $("#proof").slideDown('fast');
+      $("#friends").focus();
+      // Idea: slide headline up
+        // $('button').slideUp(500);
+    });
+});
+
+// Stop animation when user clicks headline
+$('button').click(function(){
+    $('.bounce').removeClass("animated");
+});
+
+  $(document).ready(function(){
+   $("#friends").keyup(function(){
+    if($(this).val() != "")
+    {
+     $("#signin").show(150);
+    }
+    else
+    {
+     $("#signin").hide(150);
+    }
+   });
+   $("#signin").hide();
+  });
+
+</script>

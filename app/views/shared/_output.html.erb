@@ -1,0 +1,56 @@
+<div class="results">
+  <div class="jumbotron">
+    <h1>Sorry <%= current_user.name.split(' ')[0] %>... <br> Facebook is <strong style="color: red">lying</strong> to you.</h1><br>
+    <div class="graph"></div>
+    <!-- Test dynamic variable in tweet message  -->
+    <a href="https://twitter.com/intent/tweet?url=http://facebookislying.com&text=I have <%= current_user.fb_friends %> friends that aren't real. pic.twitter.com/KcZiKPUqxG" target="_blank"><%= image_tag "tweet.jpg", style: "max-width: 150px" %></a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    $('.graph').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        exporting: { 
+          enabled: false 
+        },
+        series: [{
+            name: "Friends",
+            // colorByPoint: true,
+            data: [{
+                name: "Actual Friends",
+                y: 15,
+            }, {
+                name: "Facebook Friends",
+                y: <%= current_user.fb_friends %>,
+                sliced: true,
+                selected: true
+            }]
+        }]
+    });
+});
+</script>
