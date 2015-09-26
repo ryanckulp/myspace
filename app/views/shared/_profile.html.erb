@@ -1,0 +1,188 @@
+<div class="row"></div>
+
+<!-- left column -->
+<div class="col-md-5 border">
+
+<!-- avatar  -->
+<h2><%= @u.first_name %></h2>
+  <div class="row">
+      <div class="col-md-6" style="text-align: center">
+      <img src="assets/dwight.png" class="img img-responsive">
+      <a href=""><strong>View More Pics</strong></a>
+      </div>
+
+  <!-- location  -->
+    <div class="col-md-6">
+    <h4>I AM THE REAL DWIGHT SCHRUTE - THAT IS ALL!</h4>
+    Male <br>
+   <%= @age %> years old<br>
+    Scranton, Pennsylvania<br>
+    United States <br><br>
+    <img src="assets/online.png" class="img img-responsive"><br><br>
+    Last login: <br>
+    <%= Date.today.strftime("%m/%d/%Y")%>
+    </div>
+  </div>
+<!-- contact details -->
+  <div class="panel panel-primary actions">
+    <div class="panel-heading"><strong>Contacting <%= @u.first_name.downcase %></strong></div>
+      <div class="panel-body">
+        <div class="col-md-6">
+          <ul>
+          <strong>
+             <li><img src="assets/send.png"><%= link_to "Send Message", "mailto:#{@u.email}", target: "_blank" %></li>
+          </ul>
+          <ul>
+            <li><img src="assets/add.png"><%= link_to "Add to Friends", @u.fb_url, target: "_blank" %></li>
+          </ul>
+          <ul>
+            <li><img src="assets/im.png"><a href="">IM / Call</a></li>
+          </ul>
+          <ul>
+            <li><img src="assets/group.png"><a href="">Add to Group</a></li>           
+          </strong>
+
+        </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li><img src="assets/forward.png"><a href=""><strong>Forward to a Friend</strong></a></li>
+          </ul>
+          <ul>
+            <li><img src="assets/favorites.png"><a href=""><strong>Add to Favorites</strong></a></li>
+          </ul>
+          <ul>
+            <li><img src="assets/block.png"><a href=""><strong>Block User</strong></a></li>
+          </ul>
+          <ul>
+            <li><img src="assets/rank.png"><a href=""><strong>Rank User</strong></a></li>
+        </ul>
+        </div>
+      </div>
+  </div>
+<!-- interests -->
+  <div class="panel panel-primary interests">
+    <div class="panel-heading"><strong><%= @u.first_name.downcase %>'s Interests</strong></div>
+      <div class="panel-body">
+        <div class="col-md-4 categories">
+          <strong>
+          <p>General</p>
+          <p>Music</p>
+          <p>Movies</p>
+          <p>Television</p>
+          <p>Books</p>            
+          </strong>
+        </div>
+        <div class="col-md-8 answers">
+          <p>stuff</p>
+          <p>nickelback</p>
+          <p>shawshank redemption</p>
+          <p>girls</p>
+          <p>catcher in the rye</p>
+        </div>
+      </div>
+  </div>
+
+<!-- star  sign -->
+  <div class="panel panel-primary interests">
+    <div class="panel-heading"><strong><%= @u.first_name.downcase %>'s Details</strong></div>
+      <div class="panel-body">
+        <div class="col-md-4 categories">
+          <strong>
+          <p>Status:</p>
+          <p>Zodiac Sign:</p>      
+          </strong>
+        </div>
+        <div class="col-md-8 answers">
+          <p>stuff</p>
+          <p><a href=""><strong style="color: blue">Aquarius</strong></a></p>
+        </div>
+      </div>
+  </div>
+
+</div> 
+
+<!-- right column -->
+
+<div class="col-md-7">
+<h2></h2>
+
+<!-- header  -->
+<div class="jumbotron">
+  <h2><%= @u.first_name.downcase %> is in your extended network</h2>
+</div>
+
+<!-- blog -->
+<div class="row tight">
+  <p><strong><%= @u.first_name %>'s Latest blog Entry</strong> [<a href="#">Subscribe to this Blog</a>]</p><br>
+  <p>SCHRUTESPACE.com (<a href="">view more</a>)</p><br>
+  <p>[<a href="">View All Blog Entries</a>]</p>
+</div>
+
+<!-- about  -->
+<div class="row">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <strong><%= @u.first_name.downcase %>'s Blurbs</strong>
+      </div>
+      <div class="panel-body">
+        <strong>About me:</strong>
+        <p><%= @u.bio %></p>
+        <strong>Who I'd like to meet:</strong>
+        <p>girls cool people guns and anime' fans steven seagal</p>
+        </div>
+    </div>
+</div>
+
+<!-- friends -->
+<div class="row">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <strong><%= @u.first_name.downcase %>'s Friend Space</strong>
+      </div>
+      <div class="panel-body">
+        <p><strong style="color: black"><%= @u.first_name.downcase %> has </strong><strong><%= @u.fb_friends %></strong><strong style="color: black"> friends.</strong></p>
+        </div>
+    </div>
+
+    <div class="friends">
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+      <div class="col-md-3">
+        <p>Tom</p>
+        <img src="assets/tom.jpg" class="img img-responsive" width="150px">
+      </div>
+    </div>
+
+
+
+</div>
+
+</div> 
+<a href="#" class="btn btn-primary">btn</a>
