@@ -5,7 +5,7 @@ def self.sign_in_from_omniauth(auth)
 end
 
 def self.create_user_from_omniauth(auth)
-binding.pry
+# binding.pry
   create(
     provider: auth['provider'],
     uid: auth['uid'],
