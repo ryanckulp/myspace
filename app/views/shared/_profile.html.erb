@@ -19,7 +19,7 @@
     <!-- insert gender -->
     <!-- Male  -->
     <br>
-   <%= @age %> years old<br>
+   20+ years old<br>
     <%= @u.location %><br>
     United States <br><br>
     <%= image_tag "online.png", class: "img img-responsive" %><br><br>
@@ -70,10 +70,10 @@
         </div>
         <div class="col-md-8 answers">
           <p>Christian - Other</p>
-          <p><%= @u.music %></p>
-          <p><%= @u.movies %></p>
-          <p><%= @u.television %></p>
-          <p><%= @u.books %></p>
+          <p>Pit Bull, Blink 182</p>
+          <p>Shawshank Redemption</p>
+          <p>LOST, Entourage</p>
+          <p>Harry Potter</p>
         </div>
       </div>
   </div>
@@ -88,7 +88,7 @@
           </strong>
         </div>
         <div class="col-md-8 answers">
-          <p><a href="http://ryanckulp.com/projects" target="_blank"><strong style="color: blue"><%= @sign %></strong></a></p>
+          <p><a href="http://ryanckulp.com/projects" target="_blank"><strong style="color: blue">Pisces</strong></a></p>
         </div>
       </div>
   </div>
@@ -120,9 +120,15 @@
       </div>
       <div class="panel-body">
         <strong>About me:</strong>
-        <p><%= @u.bio %></p>
+        <p>
+        <!-- <%= @u.bio %> -->
+        Football player. Cheerleader. In high school most likely.
+        </p>
         <strong>Who I'd like to meet:</strong>
-        <p><%= @u.likes.tr('[""]', '') %></p>
+        <p>
+
+          The guy from Fear Factor, your mom, Paris Hilton...
+        </p>
         </div>
     </div>
 </div>
@@ -146,9 +152,9 @@
         </a>
       </div>
       <div class="col-md-3">
-        <a href="https://myspace.com/nickelback">
-          <p>Nickelback</p>
-          <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
+        <a href="https://myspace.com/300movie">
+          <p>300</p>
+          <%= image_tag "300.jpg", class: "img img-responsive", style: "width: 150px" %>
         </a>
       </div>
       <div class="col-md-3">
@@ -158,18 +164,12 @@
         </a>
       </div>
       <div class="col-md-3">
-        <a href="https://myspace.com/creed">
-          <p>Creed</p>
-          <%= image_tag "creed.jpg", class: "img img-responsive", style: "width: 150px" %>
-        </a>
-      </div>
-      <div class="row"></div>
-      <div class="col-md-3">
         <a href="https://myspace.com/prisonbreak">
           <p>Prison Break</p>
           <%= image_tag "prisonbreak.jpg", class: "img img-responsive", style: "width: 150px" %>
         </a>
       </div>
+      <div class="row"></div>
       <div class="col-md-3">
         <a href="https://myspace.com/nickelback">
           <p>Nickelback</p>
@@ -188,7 +188,12 @@
           <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
         </a>
       </div>          
-
+      <div class="col-md-3">
+        <a href="https://myspace.com/nickelback">
+          <p>Nickelback</p>
+          <%= image_tag "nickelback.jpg", class: "img img-responsive", style: "width: 150px" %>
+        </a>
+      </div>   
 
     </div>
 </div><!-- End friend row -->

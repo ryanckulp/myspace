@@ -10,9 +10,11 @@ class HomeController < ApplicationController
 
   def profile
   @u = current_user
-  @age = bday
-  @sign = zodiac
-  @meet = people
+
+  # unused vars that only work with permitted FB app
+  # @age = bday
+  # @sign = zodiac
+  # @meet = people
   end
   
   private
