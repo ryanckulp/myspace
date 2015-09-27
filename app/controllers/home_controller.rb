@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :set_auth, only: [:profile]
+  before_action :set_auth
   require 'zodiac'
 
   def index
