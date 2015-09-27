@@ -1,12 +1,11 @@
-class User < ActiveRecord::Base
+class UserOld < ActiveRecord::Base
 
     def self.sign_in_from_omniauth(auth)
       find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth)
     end
 
     def self.create_user_from_omniauth(auth)
-
-# many of these fields require the FB submission process and have been excluded in the live user model
+    # many of these fields require the FB submission process and have been excluded in the live user model
       create(
         provider: auth['provider'],
         uid: auth['uid'],
