@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'font-awesome-rails'
 gem 'metamagic'
 gem 'zodiac'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
