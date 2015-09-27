@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     end
 
     def self.create_user_from_omniauth(auth)
+    binding.pry
       create(
         provider: auth['provider'],
         uid: auth['uid'],
