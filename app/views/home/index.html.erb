@@ -2,8 +2,15 @@
 meta description: "How many friends do you really have?"
 %>
 
-<% if current_user %>
-  <%=  render 'shared/profile' %>
-<% else %>
-  put something here 
-<% end %>
+<div class="quotes">
+  <div class="jumbotron">  
+    <h2 style="font-style:italic"><strong>In the news:</strong></h2>
+    <p>
+      Remember Tom from Myspace? You won't believe what he's up to.
+    </p>
+    <br>
+    <div class="cta">
+      <%= link_to "Learn More", auth_path %>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,18 @@
 class HomeController < ApplicationController
-  before_action :set_auth
+  before_action :set_auth, only: [:index]
   require 'zodiac'
 
   def index
-    @u = current_user
-    @age = bday
-    @sign = zodiac
-    @meet = people
   end
 
   def auth
   end
 
-  def dwight
+  def profile
+  @u = current_user
+  @age = bday
+  @sign = zodiac
+  @meet = people
   end
   
   private

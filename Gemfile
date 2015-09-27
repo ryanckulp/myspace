@@ -14,7 +14,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'font-awesome-rails'
-gem 'highcharts-rails', "~> 3.0.0"
 gem 'metamagic'
 gem 'zodiac'
 

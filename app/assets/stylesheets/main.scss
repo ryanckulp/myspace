@@ -1,4 +1,11 @@
 body {font-family: 'Courier'}
+.quotes h2 {font-family: 'BauerBodBolIta'}
+.quotes {font-family: 'BauerBodRom'; text-align: left}
+.cta a {font-style: italic; color: #333333; font-size: 21px}
+.cta a:hover {text-decoration: none}
+
+.container .quotes .jumbotron {border: none; padding-top: 250px; max-width: 330px; padding-left: 10px; padding-right: 10px; margin-left: auto; margin-right: auto; text-align: left}
+.container .quotes .jumbotron p {margin-bottom: 0px;}
 .container {width: 95%}
 .container .jumbotron {text-align: center; border-radius: 0px; box-shadow: 1px solid gray; border: 3px solid $light-gray; background-color: transparent; padding-top: 22px; padding-bottom: 22px}
 .row {margin-bottom: 0px}

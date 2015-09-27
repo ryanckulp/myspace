@@ -1,0 +1,9 @@
+<%
+meta description: "How many friends do you really have?"
+%>
+
+<% if current_user %>
+  <%=  render 'shared/profile' %>
+<% else %>
+redirect to home page
+<% end %>
