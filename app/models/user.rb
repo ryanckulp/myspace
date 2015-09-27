@@ -10,10 +10,7 @@ class User < ActiveRecord::Base
         provider: auth['provider'],
         uid: auth['uid'],
         name: auth['info']['name'],
-        first_name: auth["extra"]["raw_info"]["first_name"],
-        last_name: auth["extra"]["raw_info"]["last_name"],
-        avatar: auth["info"]["image"],
-        fb_url: auth["info"]["urls"]["Facebook"],
+        avatar: auth['info']["image"],
         email: auth['extra']['raw_info']['email'],
         fb_friends: auth['extra']['raw_info']['friends']['summary']['total_count']
         )

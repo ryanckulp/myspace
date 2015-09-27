@@ -4,7 +4,7 @@
 <div class="col-md-5 border">
 
 <!-- avatar  -->
-<h2><%= @u.first_name %></h2>
+<h2><%= @u.name.split[0] %></h2>
   <div class="row">
       <div class="col-md-6" style="text-align: center">
       <a href="<%= @u.fb_url %>" target="_blank">
@@ -29,7 +29,7 @@
   </div>
 <!-- contact details -->
   <div class="panel panel-primary actions">
-    <div class="panel-heading"><strong>Contacting <%= @u.first_name.downcase %></strong></div>
+    <div class="panel-heading"><strong>Contacting <%= @u.name.split[0].downcase %></strong></div>
       <div class="panel-body">
         <div class="col-md-6">
           <ul>
@@ -57,7 +57,7 @@
   </div>
 <!-- interests -->
   <div class="panel panel-primary interests">
-    <div class="panel-heading"><strong><%= @u.first_name.downcase %>'s Interests</strong></div>
+    <div class="panel-heading"><strong><%= @u.name.split[0].downcase %>'s Interests</strong></div>
       <div class="panel-body">
         <div class="col-md-4 categories">
           <strong>
@@ -80,7 +80,7 @@
 
 <!-- star  sign -->
   <div class="panel panel-primary interests">
-    <div class="panel-heading"><strong><%= @u.first_name.downcase %>'s Details</strong></div>
+    <div class="panel-heading"><strong><%= @u.name.split[0].downcase %>'s Details</strong></div>
       <div class="panel-body">
         <div class="col-md-4 categories">
           <strong>
@@ -101,13 +101,13 @@
 
 <!-- header  -->
 <div class="jumbotron">
-  <h2><%= @u.first_name.downcase %> is in your extended network</h2>
+  <h2><%= @u.name.split[0].downcase %> is in your extended network</h2>
 </div>
 
 <!-- blog -->
 <div class="row tight">
-  <p><strong><%= @u.first_name %>'s Latest blog Entry</strong> [<a href="<%= @u.fb_url %>">Subscribe to this Blog</a>]</p><br>
-  <p><%= "#{@u.first_name.downcase}#{@u.last_name.downcase}.com" %> (<a href="<%= @u.fb_url %>">view more</a>)</p><br>
+  <p><strong><%= @u.name.split[0] %>'s Latest blog Entry</strong> [<a href="<%= @u.fb_url %>">Subscribe to this Blog</a>]</p><br>
+  <p><%= "#{@u.name.split[0].downcase}#{@u.name.split[1].downcase}.com" %> (<a href="<%= @u.fb_url %>">view more</a>)</p><br>
   <p>[<a href="<%= @u.fb_url %>">View All Blog Entries</a>]</p>
 </div>
 
@@ -115,7 +115,7 @@
 <div class="row">
     <div class="panel panel-warning">
       <div class="panel-heading">
-        <strong><%= @u.first_name.downcase %>'s Blurbs</strong>
+        <strong><%= @u.name.split[0].downcase %>'s Blurbs</strong>
       </div>
       <div class="panel-body">
         <strong>About me:</strong>
@@ -136,10 +136,10 @@
 <div class="row">
     <div class="panel panel-warning">
       <div class="panel-heading">
-        <strong><%= @u.first_name.downcase %>'s Friend Space</strong>
+        <strong><%= @u.name.split[0].downcase %>'s Friend Space</strong>
       </div>
       <div class="panel-body">
-        <p><strong style="color: black"><%= @u.first_name.downcase %> has </strong><strong><%= @u.fb_friends %></strong><strong style="color: black"> friends.</strong></p>
+        <p><strong style="color: black"><%= @u.name.split[0].downcase %> has </strong><strong><%= @u.fb_friends %></strong><strong style="color: black"> friends.</strong></p>
         </div>
     </div>
     <div class="friends">
