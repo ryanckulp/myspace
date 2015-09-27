@@ -1,9 +1,5 @@
 <%
-meta description: "How many friends do you really have?"
+meta title: "#{@u.name}", description: "#{@u.name} on Myspace."
 %>
 
-<% if current_user %>
-  <%=  render 'shared/profile' %>
-<% else %>
-redirect to home page
-<% end %>
+<%=  render 'shared/profile' %>
