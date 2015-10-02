@@ -36,11 +36,7 @@ strong a {font-style: bold}
 .friends p {color: blue; font-style: bold; font-size: 18px; margin-bottom: 0px}
 .categories p {background-color: #bed8f2; padding: 5px; margin-bottom: 5px; color: #336aa4}
 .answers p {background-color: #dde9f8; padding: 5px; margin-bottom: 5px}
-
-
-
-
-
+.img-responsive {width: 150px;}
 
 /*Imported from FB is Lying*/
 
@@ -73,6 +69,18 @@ h1 {font-size: 31px}
 .col-xs-2 {width: 25%;}
 .input-lg {text-align: center}
 .graph {height: 300px;}
+.container {width: 98%; padding-left: 5px; padding-right: 5px;}
+.container .quotes .jumbotron {padding-top: 180px;}
+.container .jumbotron {padding-top: 0px; padding-bottom: 0px;}
+.col-md-5 { padding-right: 5px; padding-left: 5px}
+.panel-body {padding-left: 2px; padding-bottom: 0px; padding-right: 2px; padding-top: 4px}
+.interests .col-md-4 {display: inline-block; width: 44%;}
+.interests .col-md-8 {display: inline-block; width: 50%; margin-left: 0px;}
+.col-md-3 {display: inline-block;}
+.col-md-3 p {font-size: smaller;}
+.friends .img-responsive {max-width: 114px; display: inline-block;}
+.friends .row {margin-bottom: 10px;}
+
 }
 
 /* Smartphones (landscape) ----------- */
@@ -83,43 +91,4 @@ h1 {font-size: 31px}
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
 /* Styles */
-}
-
-
-
-
-
-
-/*
- * Animation configurations ( duration and fill mode )
-*/
-.animated {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    animation-iteration-count: 50;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-/*
- * Animation for webkit
-*/
-@-webkit-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
-    40% {-webkit-transform: translateY(-30px);}
-    60% {-webkit-transform: translateY(-15px);}
-} 
- 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-30px);}
-    60% {transform: translateY(-15px);}
-} 
- 
-/*
- * Adding the animation to our element
-*/
-.bounce {
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
 }
