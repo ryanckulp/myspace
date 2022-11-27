@@ -9,8 +9,6 @@ class SessionsController < ApplicationController
   end
 
   def example
-    user = User.find_by(name: 'Ryan Kulp')
-    session[:user_id] = user.id
     redirect_to profile_path
   end
 

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: "sessions#create"
   delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
 
-  get 'example', to: 'sessions#example'
+  get 'example', to: 'sessions#example' # posterity
 end

@@ -9,14 +9,14 @@ class HomeController < ApplicationController
   end
 
   def profile
-  @u = current_user
+    @u = current_user || User.find_by(name: 'Ryan Kulp')
 
   # unused vars that only work with permitted FB app
   # @age = bday
   # @sign = zodiac
   # @meet = people
   end
-  
+
   private
 
   def set_auth
